@@ -1,0 +1,8 @@
+{
+  "name": "Syndyne Accounting Solutions",
+  "description": "World-class outsourced accounting, bookkeeping, and global business advisory firm providing scalable, tech-driven financial solutions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
