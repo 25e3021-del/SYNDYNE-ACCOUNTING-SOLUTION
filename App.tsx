@@ -1,18 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
-import About from './components/About';
-import ServicesSection from './components/ServicesSection';
-import WhoWeServe from './components/WhoWeServe';
-import MissionVision from './components/MissionVision';
-import WhyChooseUs from './components/WhyChooseUs';
-import TechStack from './components/TechStack';
-import ContactForm from './components/ContactForm';
-import Testimonials from './components/Testimonials';
-import ChatBot from './components/ChatBot';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import Stats from './components/Stats.tsx';
+import About from './components/About.tsx';
+import ServicesSection from './components/ServicesSection.tsx';
+import WhoWeServe from './components/WhoWeServe.tsx';
+import MissionVision from './components/MissionVision.tsx';
+import WhyChooseUs from './components/WhyChooseUs.tsx';
+import TechStack from './components/TechStack.tsx';
+import ContactForm from './components/ContactForm.tsx';
+import Testimonials from './components/Testimonials.tsx';
+import ChatBot from './components/ChatBot.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -30,14 +30,13 @@ const App: React.FC = () => {
       <Navbar scrolled={scrolled} />
       
       <main className="flex-grow">
-        {/* Hero is handled separately to allow fixed/absolute positioning */}
         <section id="home">
           <Hero />
         </section>
 
         <Stats />
         
-        <section id="about">
+        <section id="about" className="scroll-mt-20">
           <About />
         </section>
 

@@ -3,45 +3,64 @@ import React, { useState } from 'react';
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
-    { text: "Hello! I'm the Syndyne assistant. How can I help you today?", sender: 'bot' }
+    { text: "Welcome to Syndyne! How can we assist with your bookkeeping today?", sender: 'bot' }
   ]);
 
   const toggleChat = () => setIsOpen(!isOpen);
 
+  const handleSend = () => {
+    if (!input.trim()) return;
+    const userMsg = input;
+    setMessages(prev => [...prev, { text: userMsg, sender: 'user' }]);
+    setInput('');
+    
+    // Simulate bot response
+    setTimeout(() => {
+      setMessages(prev => [...prev, { 
+        text: "Thank you for your message. One of our experts will be with you shortly. You can also reach us at info@syndyne.com.", 
+        sender: 'bot' 
+      }]);
+    }, 1000);
+  };
+
   return (
-    <div className="fixed bottom-8 right-8 z-[100]">
+    <div className="fixed bottom-8 right-8 z-[150]">
       {isOpen && (
-        <div className="bg-white w-80 h-[450px] shadow-2xl rounded-3xl overflow-hidden border border-slate-200 mb-4 flex flex-col animate-in slide-in-from-bottom-4">
-          <div className="bg-blue-600 p-6 text-white flex justify-between items-center">
+        <div className="bg-white w-[350px] h-[500px] shadow-2xl rounded-3xl overflow-hidden border border-slate-100 mb-4 flex flex-col animate-in slide-in-from-bottom-6 duration-300">
+          <div className="bg-blue-600 p-6 text-white flex justify-between items-center shadow-lg">
             <div>
-              <h4 className="font-bold">Syndyne Helper</h4>
-              <p className="text-xs opacity-75">Online • Responds Instantly</p>
+              <h4 className="font-black uppercase tracking-widest text-sm">Syndyne Assistant</h4>
+              <p className="text-[10px] font-bold opacity-80 uppercase tracking-tighter">Experts Online Now</p>
             </div>
-            <button onClick={toggleChat} className="text-white/80 hover:text-white">
-              <i className="fa-solid fa-xmark"></i>
+            <button onClick={toggleChat} className="text-white hover:rotate-90 transition-transform">
+              <i className="fa-solid fa-xmark text-xl"></i>
             </button>
           </div>
           
-          <div className="flex-grow p-4 overflow-y-auto space-y-4 bg-slate-50">
+          <div className="flex-grow p-6 overflow-y-auto space-y-4 bg-slate-50 scroll-hide">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.sender === 'bot' ? 'justify-start' : 'justify-end'}`}>
-                <div className={`max-w-[80%] p-3 rounded-2xl text-sm ${m.sender === 'bot' ? 'bg-white shadow-sm text-slate-700' : 'bg-blue-600 text-white shadow-lg'}`}>
+                <div className={`max-w-[85%] p-4 rounded-2xl text-xs font-medium leading-relaxed shadow-sm ${m.sender === 'bot' ? 'bg-white text-slate-700 rounded-bl-none' : 'bg-blue-600 text-white rounded-br-none shadow-md'}`}>
                   {m.text}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="p-4 border-t border-slate-100">
-            <div className="relative">
+          <div className="p-4 bg-white border-t border-slate-100">
+            <div className="relative flex items-center gap-2">
               <input 
                 type="text" 
-                placeholder="Type a message..." 
-                className="w-full pl-4 pr-10 py-3 bg-slate-100 rounded-xl text-sm outline-none focus:ring-1 focus:ring-blue-500 transition-all"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                placeholder="Ask about our services..." 
+                className="flex-grow pl-5 pr-12 py-4 bg-slate-100 rounded-2xl text-xs font-bold outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
               />
-              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-blue-600">
-                <i className="fa-solid fa-paper-plane"></i>
+              <button onClick={handleSend} className="absolute right-2 p-3 text-blue-600 hover:scale-110 transition-transform">
+                <i className="fa-solid fa-paper-plane text-lg"></i>
               </button>
             </div>
           </div>
@@ -50,9 +69,16 @@ const ChatBot: React.FC = () => {
 
       <button 
         onClick={toggleChat}
-        className="w-16 h-16 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 active:scale-95 transition-all"
+        className="w-16 h-16 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 active:scale-95 transition-all group"
       >
-        {isOpen ? <i className="fa-solid fa-chevron-down"></i> : <i className="fa-solid fa-comment-dots"></i>}
+        {isOpen ? (
+          <i className="fa-solid fa-chevron-down"></i>
+        ) : (
+          <div className="relative">
+            <i className="fa-solid fa-comment-dots"></i>
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-blue-600 animate-pulse"></span>
+          </div>
+        )}
       </button>
     </div>
   );
