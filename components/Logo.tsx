@@ -2,44 +2,60 @@
 import React from 'react';
 
 const Logo: React.FC<{ light?: boolean; className?: string }> = ({ light = false, className = "" }) => {
-  const color = light ? "#FFFFFF" : "#000000";
-  
+  // Use colors derived from the provided branding image
+  const blue = light ? "#FFFFFF" : "#1B365D"; // Dark corporate blue
+  const green = light ? "#4ADE80" : "#108548"; // Growth green
+  const gray = light ? "rgba(255,255,255,0.6)" : "#64748b"; // Subtle gray for tagline
+
   return (
-    <div className={`flex flex-col items-center justify-center gap-1 ${className}`}>
-      {/* Hand-crafted SVG based on the provided geometry */}
+    <div className={`flex flex-col items-center justify-center ${className}`}>
+      {/* High-fidelity SVG recreation of the provided branding asset */}
       <svg 
-        width="45" 
-        height="52" 
-        viewBox="0 0 100 115" 
+        width="65" 
+        height="65" 
+        viewBox="0 0 100 100" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="transition-transform duration-300 group-hover:scale-110"
+        className="transition-all duration-300 group-hover:scale-110 mb-2"
       >
-        {/* Upper Part */}
+        {/* Dynamic Green Outer Frame (C-shape) */}
         <path 
-          d="M50 0 L100 28.87 V57.74 L50 86.6 L0 57.74 V28.87 L50 0 Z" 
-          fill={color} 
+          d="M35 15 C 15 25, 8 55, 18 78 C 28 98, 60 100, 85 85 C 100 75, 105 50, 95 30" 
+          stroke={green} 
+          strokeWidth="10" 
+          strokeLinecap="round" 
+          fill="none"
         />
-        {/* Lower Part (Offset) */}
-        <path 
-          d="M50 28.87 L100 57.74 V86.6 L50 115.47 L0 86.6 V57.74 L50 28.87 Z" 
-          fill={color}
-          style={{ mixBlendMode: 'difference' }}
-          className="opacity-95"
-        />
-        {/* The small square gap element seen in image */}
-        <rect x="35" y="45" width="15" height="15" fill={light ? "#1e3a8a" : "white"} />
+        
+        {/* Corporate Rising Bars & Arrow */}
+        <g transform="translate(8, 8)">
+          {/* Parallel slanted bars */}
+          <path d="M22 62 L42 32" stroke={blue} strokeWidth="12" strokeLinecap="round" />
+          <path d="M38 62 L58 26" stroke={blue} strokeWidth="12" strokeLinecap="round" />
+          <path d="M54 62 L78 18" stroke={blue} strokeWidth="12" strokeLinecap="round" />
+          
+          {/* Integrated Arrow Tip */}
+          <path 
+            d="M65 18 L84 12 L84 32 Z" 
+            fill={blue} 
+          />
+        </g>
       </svg>
       
-      {/* Main Branding */}
-      <div className="flex flex-col items-center text-center mt-2">
-        <span className={`text-2xl font-[900] tracking-[0.15em] leading-none ${light ? 'text-white' : 'text-black'}`}>
+      {/* Precision Typography */}
+      <div className="flex flex-col items-center text-center">
+        <span 
+          className="text-2xl font-[900] tracking-tight leading-none" 
+          style={{ color: blue, fontFamily: 'Inter, sans-serif' }}
+        >
           SYNDYNE
         </span>
-        <div className={`flex flex-col text-[8px] font-bold tracking-[0.45em] mt-2 uppercase ${light ? 'text-white/70' : 'text-slate-500'}`}>
-          <span>ACCOUNTING</span>
-          <span className="mt-1">SOLUTIONS</span>
-        </div>
+        <span 
+          className="text-[9px] font-black tracking-[0.25em] mt-1.5 uppercase opacity-90"
+          style={{ color: gray }}
+        >
+          ACCOUNTING SOLUTION
+        </span>
       </div>
     </div>
   );

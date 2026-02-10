@@ -15,11 +15,11 @@ const About: React.FC = () => {
           <div className="relative">
             <div className="aspect-[4/5] bg-slate-100 rounded-[40px] overflow-hidden shadow-2xl group">
               <img 
-                src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=1200" 
+                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200" 
                 alt="SNDJ Global Office" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               <div className="absolute bottom-10 left-10 text-white">
                 <div className="text-6xl font-black mb-2">8+</div>
                 <div className="text-xs font-black uppercase tracking-[0.4em]">Years of Consulting Excellence</div>
