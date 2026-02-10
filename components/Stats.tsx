@@ -3,11 +3,11 @@ import React from 'react';
 
 const Stats: React.FC = () => {
   const stats = [
-    { label: 'Clients Served', value: '100+', sublabel: 'Global Businesses' },
-    { label: 'Invoices Monthly', value: '100k+', sublabel: 'Processed with 99.9% Accuracy' },
-    { label: 'Completed Projects', value: '500+', sublabel: 'Consultancy Excellence' },
-    { label: 'Reconciliations', value: '5000+', sublabel: 'Per Month' },
-    { label: 'Team Size', value: '150+', sublabel: 'Certified Experts' },
+    { label: 'Happy Clients', value: '300+', sublabel: 'Global Partnerships' },
+    { label: 'Projects Done', value: '722+', sublabel: 'Accounting Excellence' },
+    { label: 'Experience', value: '8+', sublabel: 'Years in Business' },
+    { label: 'Underway', value: '125+', sublabel: 'Active Projects' },
+    { label: 'Accuracy', value: '99.9%', sublabel: 'Financial Precision' },
   ];
 
   return (

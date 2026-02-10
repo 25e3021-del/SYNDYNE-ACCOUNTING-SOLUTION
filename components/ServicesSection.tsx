@@ -3,40 +3,37 @@ import React from 'react';
 
 const ServicesSection: React.FC = () => {
   const services = [
-    { title: 'Accounting Outsourcing', icon: 'fa-briefcase', desc: 'End-to-end management of your books, from day-to-day entries to year-end closing.' },
-    { title: 'Accounts Payable', icon: 'fa-file-invoice-dollar', desc: 'Timely vendor payments and invoice processing to optimize your cash flow.' },
-    { title: 'Accounts Receivable', icon: 'fa-hand-holding-dollar', desc: 'Efficient collection strategies to reduce DSO and improve liquidity.' },
-    { title: 'Hire Virtual Accountant', icon: 'fa-user-tie', desc: 'Dedicated professional resources working as an extension of your in-house team.' },
-    { title: 'Financial Reporting', icon: 'fa-chart-pie', desc: 'Accurate, insightful dashboards and statements for data-driven decisions.' },
-    { title: 'Payroll Outsourcing', icon: 'fa-users', desc: 'Hassle-free payroll processing with 100% compliance with local laws.' },
-    { title: 'Budgeting & Forecasting', icon: 'fa-bullseye', desc: 'Strategic planning tools to navigate your business toward growth.' },
-    { title: 'Project Accounting', icon: 'fa-diagram-project', desc: 'Granular tracking of project-specific revenues and expenses.' },
-    { title: 'Catch-Up Bookkeeping', icon: 'fa-clock-rotate-left', desc: 'Cleaning up backlogged records to bring your finances up to speed.' },
+    { title: 'Accounting / Bookkeeping', icon: 'fa-book-open', desc: 'Highest quality of booking is our priority. Understand your business value with proper statements.' },
+    { title: 'Tax Preparation', icon: 'fa-file-invoice-dollar', desc: 'Expertise you can trust to raise your standards. Accurate US tax filing with peace of mind assured.' },
+    { title: 'Virtual CFO', icon: 'fa-user-tie', desc: 'Committed to your financial growth. Progress calls for an excellent CFO for your enterprise.' },
+    { title: 'FBAR / FATCA Consultation', icon: 'fa-earth-americas', desc: 'Understand the intricate details of FBAR and FATCA compliance. We help you stay informed.' },
+    { title: 'Payroll Services', icon: 'fa-users-gear', desc: 'Making payroll easy and straightforward. Pay your employees without the headache at affordable prices.' },
+    { title: 'Sales Tax', icon: 'fa-calculator', desc: 'Navigating 45 states and thousands of local jurisdictions. Expert handling of complex taxation systems.' },
   ];
 
   return (
-    <div className="py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Our Service Ecosystem</h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          From startups to established enterprises, we provide modular services tailored to your specific financial complexity.
-        </p>
-      </div>
-
+    <div className="py-32 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px] mb-4">Our Expertise</div>
+          <h2 className="text-5xl font-black text-slate-900 leading-tight">
+            Quality You Can <span className="text-blue-600">Trust</span>
+          </h2>
+          <p className="text-lg text-slate-500 mt-6 font-medium max-w-2xl mx-auto">
+            Finest service with advanced technology and skills catering to your Accounting, Tax, and CFO needs.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-100 transition-all group">
-              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <i className={`fa-solid ${service.icon} text-2xl text-blue-600 group-hover:text-white`}></i>
+            <div key={idx} className="bg-white p-10 rounded-[32px] border border-slate-100 hover:shadow-2xl hover:border-blue-100 transition-all group cursor-pointer hover:-translate-y-2 duration-500">
+              <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:rotate-6 transition-all duration-500">
+                <i className={`fa-solid ${service.icon} text-2xl text-slate-400 group-hover:text-white`}></i>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight">{service.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
                 {service.desc}
               </p>
-              <a href="#" className="text-blue-600 text-xs font-bold uppercase tracking-widest hover:underline">
-                Read More
-              </a>
             </div>
           ))}
         </div>

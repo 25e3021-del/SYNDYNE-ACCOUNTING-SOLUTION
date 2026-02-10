@@ -1,85 +1,75 @@
 
 import React from 'react';
-import Logo from './Logo';
+import Logo from './Logo.tsx';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-400 pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-1 lg:col-span-1">
-            <Logo light />
-            <p className="mt-6 text-sm leading-relaxed max-w-xs">
-              Syndyne Accounting Solutions is a world-class Outsourced Accounting Service Provider. We enable global businesses to scale by taking over the complexities of financial management.
+    <footer className="bg-slate-950 text-slate-400 pt-32 pb-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-4 gap-12 mb-24">
+          <div className="col-span-1">
+            <div className="transform scale-90 origin-left mb-8">
+              <Logo light />
+            </div>
+            <p className="text-sm leading-relaxed font-medium text-slate-500">
+              SNDJ Global is an accounting firm working with a team of experts in numbers and contributing to your growth.
             </p>
-            <div className="mt-8 flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i className="fa-brands fa-twitter"></i></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i className="fa-brands fa-facebook-f"></i></a>
+            <div className="mt-8 space-y-2 text-[11px] font-bold uppercase tracking-widest">
+              <div className="text-white">Jay Desai, CEO</div>
+              <div className="text-blue-500">+1 561-536-6050</div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Accounting Services</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Offshore Accounting</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Online Bookkeeping</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Financial Reporting</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Accounts Payable</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Budgeting & Forecasting</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Software Expertise</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">QuickBooks Accounting</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Xero Accounting</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Zoho Books</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Tally Accounting</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">MS Business Central</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Contact Us</h4>
-            <div className="space-y-4 text-sm">
-              <p className="flex items-start gap-3">
-                <i className="fa-solid fa-location-dot mt-1 text-blue-500"></i>
-                Highway Towers- Tower 1, Ground Floor A13/2,3,4, Sec 62 Noida (Delhi NCR)
+            <h4 className="text-white text-[10px] font-black uppercase tracking-[0.4em] mb-10">USA Offices</h4>
+            <div className="space-y-6 text-xs leading-relaxed">
+              <p>
+                <span className="text-blue-500 font-black block mb-1">WASHINGTON</span>
+                Plazza 600, 600 Stewart Street, <br/>Suite 300, Seattle, WA 98101
               </p>
-              <p className="flex items-center gap-3">
+              <p>
+                <span className="text-blue-500 font-black block mb-1">CALIFORNIA</span>
+                DBA R & A Business Services <br/>3820 Del Amo Blvd, Torrance, CA 90503
+              </p>
+              <p>
+                <span className="text-blue-500 font-black block mb-1">NEW YORK</span>
+                575 5th Avenue, 14th Floor <br/>New York City, NY 10017
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-white text-[10px] font-black uppercase tracking-[0.4em] mb-10">Quick Links</h4>
+            <ul className="space-y-4 text-xs font-bold uppercase tracking-widest">
+              <li><a href="#services" className="hover:text-blue-500">Tax Preparation</a></li>
+              <li><a href="#services" className="hover:text-blue-500">FBAR Consultation</a></li>
+              <li><a href="#services" className="hover:text-blue-500">Virtual CFO</a></li>
+              <li><a href="#services" className="hover:text-blue-500">Payroll Service</a></li>
+              <li><a href="#services" className="hover:text-blue-500">Sales Tax</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white text-[10px] font-black uppercase tracking-[0.4em] mb-10">Direct Contact</h4>
+            <div className="space-y-4 text-xs font-medium">
+              <div className="flex items-center gap-3">
                 <i className="fa-solid fa-phone text-blue-500"></i>
-                +91-925-825-6391
-              </p>
-              <p className="flex items-center gap-3">
+                <span>Sandip Desai: +1 201-940-3400</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <i className="fa-solid fa-phone text-blue-500"></i>
+                <span>Yatri Shah: +1 201-633-1141</span>
+              </div>
+              <div className="flex items-center gap-3">
                 <i className="fa-solid fa-envelope text-blue-500"></i>
-                info@syndyne.com
-              </p>
-              <p className="flex items-center gap-3">
-                <i className="fa-solid fa-clock text-blue-500"></i>
-                Mon-Sat (9:00 AM to 6:00 PM)
-              </p>
+                <span>info@sndjglobal.com</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-12 text-center text-[10px] space-y-4">
-          <div className="flex flex-wrap justify-center gap-6 mb-4">
-            <a href="#" className="hover:text-white">About Us</a>
-            <a href="#" className="hover:text-white">Why Syndyne</a>
-            <a href="#" className="hover:text-white">Career</a>
-            <a href="#" className="hover:text-white">Pricing</a>
-            <a href="#" className="hover:text-white">Blogs</a>
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Confidentiality</a>
-          </div>
-          <p>
-            Syndyne Accounting Solutions is an Outsourced Accounting Service Provider, providing bookkeeping and financial reporting services. <br/>
-            Syndyne does not provide services that would require a license to practice public accountancy.
-          </p>
-          <p>© 2025 Syndyne Accounting Solutions. All Rights Reserved.</p>
+        <div className="pt-16 border-t border-white/5 text-center">
+          <p className="text-[10px] font-black text-slate-600 tracking-[0.2em]">© 2025 SNDJ GLOBAL. ALL RIGHTS RESERVED. DESIGNED FOR ACCURACY.</p>
         </div>
       </div>
     </footer>
